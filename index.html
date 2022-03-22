@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignment 5</title>
     <script src="js/script.js" defer ></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+
+ <!--   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <style>
+ -->
+        <style>
         h1 {margin-bottom: 30px;}
         label {font-weight: bold;}
         input, select {margin-bottom: 10px;}
@@ -23,20 +25,22 @@
         <!--  INPUTS  -->
         <fieldset> <legend>Required:</legend>            
             <label for="inIdNumber">8-Digit Employee ID</label> <br>
-            <input id="inIdNumber" name="inIdNumber" type="nummber" placeholder="23423424" required> <br>
+            <input id="inIdNumber" name="inIdNumber" type="nummber" placeholder="23423424" 
+                   required pattern="[0-9]{8}"> <br>
 
             <label for="inFullName">Full Name</label> <br>
             <input id="inFullName" name="inFullName" type="text" placeholder="The Godfather" required> <br> 
 
             <label for="in4DigitExt">4-Digit Extension</label> <br>
-            <input id="in4DigitExt" name="in4DigitExt"  type="text" placeholder="0342" required> <br>
+            <input id="in4DigitExt" name="in4DigitExt"  type="text" placeholder="0342" 
+                   required pattern="[0-9]{4}"> <br>
 
             <label for="inEmail">Email</label><br>
-            <input id="inEmail" name="inEmail"  type="email" placeholder="zak@vectacorp.com"> <br>
+            <input id="inEmail" name="inEmail"  type="email" placeholder="zak@vectacorp.com" required> <br>
 
             <label for="inSelectionDepartment">Department</label><br>
-            <select name="inSelectionDepartment" id="inSelectionDepartment" >
-                <option selected="selected">-- Select --</option>
+            <select name="inSelectionDepartment" id="inSelectionDepartment" required>
+                <option value="">Please Select</option>
                 <option value="Adminstration">Adminstration</option>
                 <option value="Engineering">Engineering</option>
                 <option value="Executive">Executive</option>
@@ -50,7 +54,7 @@
         </fieldset>
 
         <fieldset><br><br>
-            <input id="btnAddEmployee" type="submit" value="Add Employee">
+            <input  type="submit" value="Add Employee" id="btnAddEmployee">
         </fieldset>
     </form>
         <!--  OUTPUTS  -->
