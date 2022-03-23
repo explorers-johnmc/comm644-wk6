@@ -5,8 +5,6 @@
 const $jsSel   = selector => document.querySelector(selector);
 const $jsId    = id       => document.getElementById(id);
 
-let fmEmpFormAction  = $jsId("empForm");  
-
 //  OUTPUTS  
 function fnConsoleLogRecords(Event) {
 Event.preventDefault();
@@ -22,4 +20,4 @@ Department: ${ $jsSel("#inSelectionDepartment").value }
 }
 //  EVENTS
 //event listeners attached to form not button/submit; yet the event will be submit, bubbled up to the parent form
-fmEmpFormAction.addEventListener("submit", Event => fnConsoleLogRecords(Event), false  ); // add the default flase just as a placeholder fo completeness
+const fmEmpFormAction = $jsId("empForm").addEventListener("submit", Event => fnConsoleLogRecords(Event), false  ); // add the default flase just as a placeholder fo completeness
